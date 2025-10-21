@@ -210,6 +210,11 @@ CSV.write("data/testout7_3.csv",
             :B3=>[fd.beta[4]]            
 ))
 
+#7.4
+cin = CSV.read("data/test7_2.csv",DataFrame) |> Matrix
+fd = fit_general_t(cin[:,1])
+fd_aicc = aicc(fd,cin[:,1])
+CSV.write("data/testout7_4.csv", DataFrame(:AICC=>[fd_aicc]))
 
 # Test 8
 
